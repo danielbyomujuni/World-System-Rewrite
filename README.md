@@ -4,6 +4,7 @@
     - [ ] Placholder API
     - [ ] Sethome Repair
     - [ ] Old GUI
+    - [ ] Generated Structures
 - [ ] New Dependance Config
 - [ ] New Dimension System / Nether and End Generation
 - [ ] New UUID World Nomenclature
@@ -28,4 +29,23 @@
 - [ ] Multi Server Suport (More Info Later)
 - [ ] Less Command Based 
      > Making it so that more things can be done via the world  
-     > Same Way Hypixel designs there plugins  
+     > Same Way Hypixel designs there plugins
+- [ ] Commenting
+- [ ] Code Clean up
+- [ ] Optimisations
+- [ ] Better Command Framework
+- [ ] World Rent cost {ISSUE #138}
+- [ ] ?World Compression {ISSUE #105}
+- [ ] World Guard Auto Create and Flag (Possible Addon)
+- [ ] Downloadable World System Presets {ISSUE#50}
+- [ ] IN Game Template World Modifications {ISSUE#44}
+- [ ] Command Disabling {ISSUE#37}
+- [ ] More Commands {ISSUE#14}
+- [ ] Ownership Tranfer {ISSUE#13}
+- [ ] Report Worlds {ISSUE#12}
+- [ ] Featured Worlds {ISSUE#11}
+- [ ] ?Nether Star Gui {ISSUE#10} (Possible Addon)
+- [ ] Co-Owners {ISSUE#9} (Guilds and FriendList Addon?)
+- [ ] World Moderation {ISSUE#8}
+- [ ] Per World Chat {ISSUE#5}
+- [ ] PVP {ISSUE#2}
