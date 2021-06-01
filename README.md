@@ -27,5 +27,5 @@
 - [ ] Brigider Supports
 - [ ] Multi Server Suport (More Info Later)
 - [ ] Less Command Based 
-     > Making it so that more things can be done via the world
+     > Making it so that more things can be done via the world  
      > Same Way Hypixel designs there plugins  
