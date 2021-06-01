@@ -1,1 +1,31 @@
-World System Rewrite
+### Goals
+- [ ] Parity
+    - [ ] World Gen
+    - [ ] Placholder API
+    - [ ] Sethome Repair
+    - [ ] Old GUI
+- [ ] New Dependance Config
+- [ ] New Dimension System / Nether and End Generation
+- [ ] New UUID World Nomenclature
+- [ ] New Api
+- [ ] Multi-world Support 
+- [ ] More Debug Systems
+- [ ] Discord Support Bot 
+- [ ] Datapack Support 
+- [ ] Better Wiki
+- [ ] Spawn in world on first join
+- [ ] New 1.16 Gamerules Support 
+- [ ] Folder deletion Failsafe
+- [ ] World Template Webgenerator
+- [ ] New Gamemode System
+- [ ] Portals Support
+- [ ] Public / Semi-Public Worlds
+- [ ] ?Holograms Support
+- [ ] Separate Inventory Support
+- [ ] New Placholders
+- [ ] Better Perm Systems
+- [ ] Brigider Supports
+- [ ] Multi Server Suport (More Info Later)
+- [ ] Less Command Based 
+     > Making it so that more things can be done via the world
+     > Same Way Hypixel designs there plugins  
