@@ -1,0 +1,4 @@
+name: WorldSystem
+version: 2.5.0
+main: org.trainerlord.worldsystem.WorldSystem
+api-version: 1.16
