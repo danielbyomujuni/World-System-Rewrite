@@ -1,5 +1,6 @@
 package org.trainerlord.worldsystem;
 //Local classes
+import org.trainerlord.worldsystem.commands.CommandRegistry;
 import org.trainerlord.worldsystem.configs.configs;
 
 //Minecraft Related classes
@@ -15,8 +16,15 @@ public class WorldSystem extends JavaPlugin {
      ***************/
     @Override
     public void onEnable() {
-        getLogger().info("onEnable is called!");
+        getLogger().info("World System Enabled");
+
+        //Creates All Nessiary Configuation Files
         configs.createConfigs();
+
+        //Inits all Nessisary Commands
+        //TODO Command Alisis
+
+        //this.getCommand("ws").setExecutor(new CommandRegistry());
     }
     @Override
     public void onDisable() {

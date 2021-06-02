@@ -15,7 +15,7 @@
 
     <repositories>
         <repository>
-            <id>commons-io</id>
+            <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>

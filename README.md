@@ -5,7 +5,7 @@
     - [ ] Sethome Repair
     - [ ] Old GUI
     - [ ] Generated Structures
-- [ ] New Dependance Config
+- [X] New Dependance Config
 - [ ] New Dimension System / Nether and End Generation
 - [ ] New UUID World Nomenclature
 - [ ] New Api

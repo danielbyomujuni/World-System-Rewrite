@@ -7,6 +7,7 @@ import org.trainerlord.worldsystem.WorldSystem;
 
 //Minecraft Related classes
 import org.bukkit.Bukkit;
+import org.trainerlord.worldsystem.configs.database.MessageConfig;
 
 //Java classes
 import java.io.File;
@@ -17,6 +18,7 @@ import java.io.File;
 //TODO More Comments
 //TODO Fix Errors
 
+//TODO Fix Dependance Config
 public class configs {
 
     //---Global Varibles---//

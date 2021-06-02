@@ -3,6 +3,7 @@ package org.trainerlord.worldsystem.configs;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.commons.lang.RandomStringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.trainerlord.worldsystem.WorldSystem;
@@ -18,7 +19,7 @@ Highest ID has Been Abandoned
 
  */
 
-
+//TODO Done
 //TODO Clean Code
 //TODO Document this Mess
 //TODO More Comments
@@ -92,119 +93,119 @@ public class DataConfig {
     }
 
 
-    //TODO Update to GSON
     public static void checkWorlds() {
         verifyDataConfig();
 
         long deleteTime = 1000 * 60 * 60 * 24 * PluginConfig.deleteAfter();
         long now = System.currentTimeMillis();
-        for (String s : cfg.getConfigurationSection("Dependences").getKeys(false)) {
-            if (!cfg.isLong("Dependences." + s + ".last_loaded") && !cfg.isInt("Dependences." + s + ".last_loaded"))
-                continue;
-            long lastLoaded = cfg.getLong("Dependences." + s + ".last_loaded");
+
+        for (WorldSystemData.Worlds playerWorld : data.playerWorlds) {
+            long lastLoaded = playerWorld.lastLoaded;
             long diff = now - lastLoaded;
+
             if (diff > deleteTime) {
                 Bukkit.getConsoleSender().sendMessage(
-                        PluginConfig.getPrefix() + "World of " + s + " was not loaded for too long. Deleting!");
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ws delete " + s);
+                        PluginConfig.getPrefix() + "World of " + playerWorld.OWNERName + " was not loaded for too long. Deleting!");
+                //TODO New Command System
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ws delete " + playerWorld.OWNERName + " " + playerWorld.worldNumber);
             }
         }
     }
-    //TODO Update to GSON
+
     private void setConfig() {
         verifyDataConfig();
-
-        cfg.set("HighestID", -1);
         try {
-            cfg.save(dconfig);
+            writeJSON(data);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    //TODO Update to GSON
     public void refreshName() {
         if (hasWorld()) {
             verifyDataConfig();
-            String uuid = this.uuid.toString();
-            cfg.set("Dependences." + uuid + ".ActualName", PlayerWrapper.getOfflinePlayer(this.uuid).getName());
+            for (WorldSystemData.Worlds playerWorld : data.playerWorlds) {
+                    for (WorldSystemData.PlayerData player : data.players) {
+                        if (playerWorld.OWNER == player.WSUUID) {
+                            playerWorld.OWNERName = PlayerWrapper.getOfflinePlayer(UUID.fromString(player.UUID)).getName();
+                        }
+
+                    }
+            }
             try {
-                cfg.save(dconfig);
+                writeJSON(data);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-    //TODO Update to GSON
-    //TODO Change System
-    public void createNewEntry() {
+
+    public void createNewWorld() {
         verifyDataConfig();
-        String uuid = this.uuid.toString();
-        int id = cfg.getInt("HighestID");
-        id++;
-        cfg.set("HighestID", id);
-        cfg.set("Dependences." + uuid + ".ID", id);
-        cfg.set("Dependences." + uuid + ".ActualName", PlayerWrapper.getOfflinePlayer(this.uuid).getName());
-        try {
-            cfg.save(dconfig);
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (WorldSystemData.PlayerData player : data.players) {
+            if (player.WSUUID == WSuuid) {
+                data.playerWorlds.add(new WorldSystemData.Worlds(WSuuid, PlayerWrapper.getOfflinePlayer(UUID.fromString(player.UUID)).getName(),player.WorldCount));
+                player.WorldCount++;
+                try {
+                    writeJSON(data);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
     }
-    //TODO Update to GSON
-    //TODO Change System
+
+
+
     public boolean hasWorld() {
         verifyDataConfig();
-        String uuid = this.uuid.toString();
-        //Fix for #40
-        return cfg.isInt("Dependences." + uuid + ".ID");
-    }
-    //TODO Update to GSON
-    //TODO Change System
-    public String getWorldname() {
-        verifyDataConfig();
-        String uuid = this.uuid.toString();
-        int id = dcfg.getInt("Dependences." + uuid + ".ID");
-        return "ID" + id + "-" + uuid;
-    }
-    //TODO Update to GSON
-    //TODO Change System
-    public String getWorldNameByOfflinePlayer() {
-        String name;
-        String uuid = this.uuid.toString();
-        verifyDataConfig();
-        if (cfg.getString("Dependences." + uuid + ".ActualName") == null) {
-            name = "n";
-        } else {
-            name = "ID" + cfg.getInt("Dependences." + uuid + ".ID") + "-" + uuid;
+        for (WorldSystemData.PlayerData player : data.players) {
+            if (player.WSUUID == WSuuid) {
+                return player.WorldCount > 0;
+            }
         }
-        return name;
+        return false;
     }
-    //TODO Update to GSON
-    //TODO Change System
-    public void setLastLoaded() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+
+    public String getWorldname(int WorldNumber) {
         verifyDataConfig();
-        cfg.set("Dependences." + uuid + ".last_loaded", System.currentTimeMillis());
+
+        for (WorldSystemData.Worlds playerWorld : data.playerWorlds) {
+            if (playerWorld.OWNER == WSuuid) {
+                return playerWorld.OWNER + "-" + WorldNumber;
+            }
+        }
+        return null;
+    }
+    public void setLastLoaded() {
+        verifyDataConfig();
+
+        for (WorldSystemData.Worlds playerWorld : data.playerWorlds) {
+            if (playerWorld.OWNER == WSuuid) {
+                playerWorld.lastLoaded = System.currentTimeMillis();
+            }
+        }
+
         try {
-            cfg.save(dconfig);
+            writeJSON(data);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    //TODO Update to GSON
-    //TODO Change System
-    public int getID() {
-        verifyDataConfig();
-        return dcfg.getInt("Dependences." + this.uuid.toString() + ".ID");
-    }
+
     //TODO Change System
     public OfflinePlayer getOwner() {
-        return PlayerWrapper.getOfflinePlayer(uuid);
+        return PlayerWrapper.getOfflinePlayer(getUUIDfromWSUUID(WSuuid));
     }
 
     /*
      *  New Spuplimental Code
      */
+
+
+
+
+
 
     //TODO Modify The Modifiers
 
@@ -212,8 +213,7 @@ public class DataConfig {
 
 
 
-
-    public static String getWSUUID(UUID playerUUID) {
+    private static String getWSWORLD(UUID playerUUID) {
         //TODO Make More Effienct
         if (data != null) {
             for (WorldSystemData.PlayerData player : data.players) {
@@ -224,8 +224,32 @@ public class DataConfig {
         }
         return null;
     }
+    private static String getWSUUID(UUID playerUUID) {
+        //TODO Make More Effienct
+        if (data != null) {
+            for (WorldSystemData.PlayerData player : data.players) {
+                if (player.UUID == playerUUID.toString()) {
+                    return player.WSUUID;
+                }
+            }
+        }
+        String newUUID = createNewWSUUID();
+        WorldSystemData.PlayerData newPlayer;
+        newPlayer = new WorldSystemData.PlayerData(playerUUID,newUUID,0);
+        data.players.add(newPlayer);
+        return newUUID;
+    }
 
-    public static String createNewUUID() {
+    private static UUID getUUIDfromWSUUID(String WSUUID) {
+        for (WorldSystemData.PlayerData player : data.players) {
+            if (player.WSUUID == WSUUID) {
+                return UUID.fromString(player.UUID);
+            }
+        }
+        return null;
+    }
+
+    private static String createNewWSUUID() {
         String WSUUID = RandomStringUtils.random(8, "0123456789abcdef");
 
         if (data != null) {
