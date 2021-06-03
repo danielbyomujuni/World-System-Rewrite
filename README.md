@@ -5,7 +5,8 @@
     - [ ] Sethome Repair
     - [ ] Old GUI
     - [ ] Generated Structures
-- [X] New Dependance Config
+    - [ ] Limit WorldEdit
+- [ ] New Dependance Config (need Redone)
 - [ ] New Dimension System / Nether and End Generation
 - [ ] New UUID World Nomenclature
 - [ ] New Api
@@ -19,7 +20,7 @@
 - [ ] Folder deletion Failsafe
 - [ ] World Template Webgenerator
 - [ ] New Gamemode System
-- [ ] Portals Support
+- [ ] Portals Support - Addon
 - [ ] Public / Semi-Public Worlds
 - [ ] ?Holograms Support
 - [ ] Separate Inventory Support
@@ -29,7 +30,7 @@
 - [ ] Multi Server Suport (More Info Later)
 - [ ] Less Command Based 
      > Making it so that more things can be done via the world  
-     > Same Way Hypixel designs there plugins
+     > Same Way Hypixel designs their plugins
 - [ ] Commenting
 - [ ] Code Clean up
 - [ ] Optimisations
@@ -50,3 +51,5 @@
 - [ ] Per World Chat {ISSUE#5}
 - [ ] PVP {ISSUE#2}
 - [ ] `Permeate` Worlds
+- [ ] New Standard GUI
+- [ ] GUI Generator
