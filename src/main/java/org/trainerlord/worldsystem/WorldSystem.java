@@ -1,5 +1,6 @@
 package org.trainerlord.worldsystem;
 //Local classes
+import org.bukkit.plugin.Plugin;
 import org.trainerlord.worldsystem.commands.CommandRegistry;
 import org.trainerlord.worldsystem.configs.configs;
 
@@ -29,6 +30,11 @@ public class WorldSystem extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("onDisable is called!");
+    }
+
+
+    public static Plugin getInstance() {
+        return null;
     }
 
 }

@@ -6,10 +6,10 @@ package org.trainerlord.worldsystem.utils;
 //TODO More Comments
 //TODO Fix Errors
 
-//TODO AnotherDay
+
 import com.google.common.base.Preconditions;
 import org.trainerlord.worldsystem.configs.PluginConfig;
-import de.butzlabben.world.config.WorldConfig; //Need to get to
+import org.trainerlord.worldsystem.configs.WorldConfig;
 import org.trainerlord.worldsystem.configs.database.DatabaseProvider;
 import org.trainerlord.worldsystem.configs.database.DatabaseUtil;
 import java.sql.PreparedStatement;

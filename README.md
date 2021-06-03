@@ -49,3 +49,4 @@
 - [ ] World Moderation {ISSUE#8}
 - [ ] Per World Chat {ISSUE#5}
 - [ ] PVP {ISSUE#2}
+- [ ] `Permeate` Worlds
