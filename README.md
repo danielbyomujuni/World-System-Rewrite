@@ -8,6 +8,7 @@
     - [ ] Limit WorldEdit
     - [X] GSON Dependance
     - [ ] Turn Repeated Code into Methods
+      
         -[ ] Command Classes
         -[ ] Other Classes
   
