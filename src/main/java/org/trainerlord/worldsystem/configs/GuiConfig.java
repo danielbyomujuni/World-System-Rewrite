@@ -1,6 +1,6 @@
 package org.trainerlord.worldsystem.configs;
 
-import org.trainerlord.worldsystem.guiInventory.OrcItem;
+import org.trainerlord.worldsystem.gui.inventory.OrcItem;
 import org.trainerlord.worldsystem.WorldSystem;
 //import de.butzlabben.world.util.VersionUtil;
 import org.bukkit.Bukkit;

@@ -6,8 +6,6 @@ package org.trainerlord.worldsystem.configs;
 import org.trainerlord.worldsystem.WorldSystem;
 
 //Minecraft Related classes
-import org.bukkit.Bukkit;
-import org.trainerlord.worldsystem.configs.database.MessageConfig;
 
 //Java classes
 import java.io.File;
@@ -34,7 +32,7 @@ public class configs {
         File folder = WorldSystem.getPlugin(WorldSystem.class).getDataFolder();
         dir = new File(folder + "/worldsources");
         config = new File(folder, "config.yml");
-        dconfig = new File(folder, "dependence.yml");
+        dconfig = new File(folder, "WSData.json");
         languages = new File(folder + "/languages");
         gui = new File(folder, "gui.yml");
 

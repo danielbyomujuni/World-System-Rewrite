@@ -1,4 +1,4 @@
-package org.trainerlord.worldsystem.guiInventory;
+package org.trainerlord.worldsystem.gui.inventory;
 
 import org.trainerlord.worldsystem.WorldSystem;
 import org.bukkit.Bukkit;

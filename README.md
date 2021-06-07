@@ -3,9 +3,10 @@
     - [ ] World Gen
     - [ ] Placholder API
     - [ ] Sethome Repair
-    - [ ] Old GUI
+    - [X] Old GUI
     - [ ] Generated Structures
     - [ ] Limit WorldEdit
+    - [X] GSON Dependance
 - [ ] New Dependance Config (need Redone)
 - [ ] New Dimension System / Nether and End Generation
 - [ ] New UUID World Nomenclature

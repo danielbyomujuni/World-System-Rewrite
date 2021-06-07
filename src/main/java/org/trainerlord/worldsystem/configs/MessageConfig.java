@@ -1,4 +1,4 @@
-package org.trainerlord.worldsystem.configs.database;
+package org.trainerlord.worldsystem.configs;
 
 
 import net.md_5.bungee.api.ChatColor;

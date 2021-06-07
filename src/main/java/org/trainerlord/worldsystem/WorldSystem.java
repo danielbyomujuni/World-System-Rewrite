@@ -25,7 +25,7 @@ public class WorldSystem extends JavaPlugin {
         //Inits all Nessisary Commands
         //TODO Command Alisis
 
-        //this.getCommand("ws").setExecutor(new CommandRegistry());
+        this.getCommand("ws").setExecutor(new CommandRegistry());
     }
     @Override
     public void onDisable() {

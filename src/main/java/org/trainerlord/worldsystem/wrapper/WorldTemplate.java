@@ -1,10 +1,8 @@
 package org.trainerlord.worldsystem.wrapper;
 
 
-import org.trainerlord.worldsystem.guiInventory.OrcItem;
+import org.trainerlord.worldsystem.gui.inventory.OrcItem;
 import org.trainerlord.worldsystem.configs.GuiConfig;
-
-import lombok.Getter;
 
 //TODO Clean Code
 //TODO Document this Mess

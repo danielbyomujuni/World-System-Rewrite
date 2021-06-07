@@ -1,6 +1,7 @@
-package org.trainerlord.worldsystem.guiInventory;
+package org.trainerlord.worldsystem.gui.inventory;
 
 import org.bukkit.entity.Player;
+
 //TODO Document this Mess
 //TODO More Comments
 public interface OrcClickListener {
