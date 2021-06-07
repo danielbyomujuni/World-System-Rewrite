@@ -8,8 +8,8 @@
     - [ ] Limit WorldEdit
     - [X] GSON Dependance
     - [ ] Turn Repeated Code into Methods
-      -[ ] Command Classes
-      -[ ] Other Classes
+        -[ ] Command Classes
+        -[ ] Other Classes
 - [ ] New Dependance Config (need Redone)
 - [ ] New Dimension System / Nether and End Generation
 - [ ] New UUID World Nomenclature
